@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#app,
+.wrapper {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    min-width: 992px;
+}
+
+body {
+    font-family: 'PingFang SC', "Helvetica Neue", Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+}
+
+a {
+    text-decoration: none
+}
+
+.main_bg{
+    width: 800px;
+    height: 710px;
+    margin: 30px auto;
+    background: url('../../assets/image/main_bg.png') no-repeat center;
+}
