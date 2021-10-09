@@ -15,15 +15,23 @@
         >
           <el-menu-item index="/houtai" key="1">
             <i class="el-icon-menu"></i>
-            <span slot="title">导航二</span>
+            <span slot="title">用户管理</span>
           </el-menu-item>
           <el-menu-item index="/houtai1" key="2">
             <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
+            <span slot="title">日志管理</span>
           </el-menu-item>
           <el-menu-item index="/houtai2" key="3">
             <i class="el-icon-document"></i>
-            <span slot="title">导航四</span>
+            <span slot="title">报告管理</span>
+          </el-menu-item>
+            <el-menu-item index="/houtai3" key="4">
+            <i class="el-icon-document"></i>
+            <span slot="title">屏蔽词管理</span>
+          </el-menu-item>
+            <el-menu-item index="/houtai4" key="5">
+            <i class="el-icon-document"></i>
+            <span slot="title">统计分析</span>
           </el-menu-item>
         </el-menu>
       </el-col>

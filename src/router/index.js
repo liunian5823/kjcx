@@ -67,6 +67,22 @@ const routes = [
         },
         component: () => import("../views/index/index3.vue")
       },
+      {
+        path: "/houtai3",
+        name: "houtai3",
+        meta: {
+          title: "首页3"
+        },
+        component: () => import("../views/index/index4.vue")
+      },
+      {
+        path: "/houtai4",
+        name: "houtai4",
+        meta: {
+          title: "首页4"
+        },
+        component: () => import("../views/index/index5.vue")
+      },
     ]
   }
 ];
