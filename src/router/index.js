@@ -1,11 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/index/index.vue";
+import VueSession from 'vue-session'
+Vue.use(VueSession)
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/index",
     name: "index",
     meta: {
       title: "监测类型",
@@ -14,7 +16,7 @@ const routes = [
     children: []
   },
   {
-    path: "/login",
+    path: "/",
     component: (resolve) => require(["../views/Login"], resolve),
   },
   {
@@ -97,8 +99,18 @@ VueRouter.prototype.push = function push(location) {
   return routerPush.call(this, location).catch(error => error);
 };
 router.beforeEach((to, from, next) => {
-  // console.log(to.path)
-  next();
+  console.log(sessionStorage.getItem('key'))
+  if(to.path != '/'){
+    if(sessionStorage.getItem('key') == '1111'){
+      next();
+    }else{
+      next('/');
+    }
+  }else{
+    next()
+  }
+  
+  // next();
 });
 
 export default router;

@@ -4,12 +4,7 @@
     <div class="main">
       <div>
         <img src="../assets/image/login_tit2.png" alt="" srcset="" />
-        <el-form
-          :model="form"
-          :rules="rules"
-          ref="login"
-          label-width="0px"
-        >
+        <el-form :model="form" :rules="rules" ref="login" label-width="0px">
           <el-form-item prop="username">
             <el-input
               v-model="form.username"
@@ -37,7 +32,7 @@
             >
             </el-input>
             <span class="login-code">
-              <img src="../assets/image/code.png" alt="" srcset="">
+              <img src="../assets/image/code.png" alt="" srcset="" />
               <!-- <img :src="codeUrl" @click="getCode" class="login-code-img" /> -->
             </span>
           </el-form-item>
@@ -46,8 +41,9 @@
               :loading="loading"
               type="primary"
               round
-              style="width: 70%; color: #fff;margin:0 auto;display:block"
-              @click="submitForm()">
+              style="width: 70%; color: #fff; margin: 0 auto; display: block"
+              @click="submitForm()"
+            >
               <span v-if="!loading">登 录</span>
               <span v-else>登 录 中...</span>
             </el-button>
@@ -91,19 +87,19 @@ export default {
     // 去注册
     handleClick() {
       this.$router.push({
-          path:"/register",          
-          query:{name:'add'}
+        path: "/register",
+        query: { name: "add" },
       });
     },
     // 验证码
-    getCode() {
-    },
+    getCode() {},
     // 提交
     submitForm() {
       var than = this;
-      this.$refs.login.validate(valid => {
+      this.$refs.login.validate((valid) => {
         if (valid) {
-          this.$router.push({path:"/"});
+       sessionStorage.setItem('key','1111')
+          this.$router.push({ path: "/index" });
         } else {
           this.$message.error("请输入账号和密码");
           return false;
@@ -128,7 +124,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  >div{
+  > div {
     width: 410px;
     height: 410px;
     background: #fff;
@@ -137,10 +133,10 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-    >img{
-      margin: 30px 0 ;
+    > img {
+      margin: 30px 0;
     }
-    .el-form{
+    .el-form {
       width: 80%;
       .login-code {
         width: 39%;
@@ -152,10 +148,10 @@ export default {
         }
       }
     }
-    .no-userName{
+    .no-userName {
       font-size: 14px;
       color: rgb(53, 53, 53);
-      a{
+      a {
         color: #409eff;
       }
     }
@@ -163,14 +159,14 @@ export default {
 }
 </style>
 <style scoped>
-.el-form /deep/ .el-form-item{
+.el-form /deep/ .el-form-item {
   margin-bottom: 22px;
 }
-.el-form /deep/ .el-input__inner{
+.el-form /deep/ .el-input__inner {
   height: 42px !important;
   line-height: 42px !important;
   border-radius: 10px;
-  border: 1px solid #606266 !important;  
+  border: 1px solid #606266 !important;
 }
 .el-form /deep/ input::-webkit-input-placeholder {
   color: #606266;
@@ -181,7 +177,7 @@ export default {
 .el-form /deep/ input::-ms-input-placeholder {
   color: #606266;
 }
-.el-form /deep/ .el-button.is-round{
+.el-form /deep/ .el-button.is-round {
   border-radius: 20px;
   font-size: 14px;
   padding: 12px 23px;

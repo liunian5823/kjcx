@@ -29,7 +29,7 @@ module.exports = {
     https: false,
     proxy: {
       "/api": {
-        target: "127.0.0.1",
+        target: "http://192.168.1.152:8080",
         changeOrigin: true,
         pathRewrite: {
           "^/api": ""

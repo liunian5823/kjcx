@@ -9,7 +9,7 @@
         class="upload-demo"
         drag
         accept=".doc,.docx"
-        action="https://jsonplaceholder.typicode.com/posts/"
+        :action="this.Home + '/check/upload'"
         :file-list="fileList"
         :limit="1"
         :before-upload="handleBeforeUpload"
@@ -38,7 +38,7 @@
         <p class="upload-end"><span>名称：</span><el-input v-model="input"></el-input></p>
       </div>
       <p>        
-        <el-button class="btn" type="primary" round @click="$router.push({path:'/report/detection'})">监&nbsp;&nbsp;测</el-button>
+        <el-button class="btn" type="primary" round @click="jianc">监&nbsp;&nbsp;测</el-button>
         <span style="color:#999;font-size:12px"><i class="el-icon-warning-outline"></i>声明:查新报告格式检测系统遵守相关保密规定，绝不泄露您送检的文档，请放心检测!</span>
       </p>
     </div>
@@ -57,6 +57,9 @@ export default {
       fileList:[],
       input:'',
     }
+  },
+  mounted(){
+    console.log(this.Home)
   },
   methods:{    
     // 上传前校检大小
@@ -89,6 +92,7 @@ export default {
       this.$message.success("上传成功");
       this.fileList=fileList
       this.input = file.name
+       this.files = fileList[0].response
       console.log(this.fileList,fileList);
     },
     // 删除文件
@@ -96,6 +100,12 @@ export default {
       this.fileList.splice(index, 1);
       console.log(this.fileList,fileList);
     },
+    jianc(){
+      this.$router.push({
+          path: '/report/detection',
+          query:{id:this.files.upload.id,name:this.files.upload.filename}
+        });
+    }
   }
 };
 </script>

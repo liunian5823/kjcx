@@ -9,6 +9,8 @@ import ElementUI from "element-ui";
 import echarts from 'echarts'
 import "element-ui/lib/theme-chalk/index.css";
 
+import VueSession from 'vue-session'
+Vue.use(VueSession)
 Vue.config.productionTip = false;
 Vue.use(Vueaxios, axios);
 Vue.use(ElementUI, { size: "small", zIndex: 3000 });
@@ -21,7 +23,7 @@ Vue.use(ElementUI, { size: "small", zIndex: 3000 });
 // } else if (process.env.NODE_ENV === 'production') {
 //   axios.defaults.baseURL = '' // 生产环境
 // }
-
+Vue.prototype.Home = '/api'
 Vue.prototype.api = api;
 Vue.prototype.$echarts = echarts
 
