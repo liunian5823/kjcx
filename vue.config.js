@@ -1,5 +1,6 @@
 // require("babel-polyfill")
 module.exports = {
+  publicPath:"/dist/",
   transpileDependencies: ["@arcgis"],
 
   //这里禁止使用eslint-loader
@@ -29,7 +30,7 @@ module.exports = {
     https: false,
     proxy: {
       "/api": {
-        target: "http://192.168.1.152:8080",
+        target: "http://http://localhost/:8080",
         changeOrigin: true,
         pathRewrite: {
           "^/api": ""

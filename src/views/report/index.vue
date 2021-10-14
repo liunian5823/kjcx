@@ -9,7 +9,7 @@
         class="upload-demo"
         drag
         accept=".doc,.docx"
-        :action="this.Home + '/check/upload'"
+        action="http://192.168.1.2:8081/check/upload"
         :file-list="fileList"
         :limit="1"
         :before-upload="handleBeforeUpload"
